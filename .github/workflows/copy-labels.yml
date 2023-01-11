@@ -12,3 +12,4 @@ jobs:
           custom-keywords: |
             solves
             implements
+          from-title: true
