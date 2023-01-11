@@ -87,12 +87,12 @@ function run() {
             const issueLabels = response.data.map((label) => label.name);
             return [...acc, ...issueLabels];
         }, []));
-        yield client.issues.addLabels({
+        labels.length > 0 && (yield client.issues.addLabels({
             owner: github.context.repo.owner,
             repo: github.context.repo.repo,
             issue_number: issueNumber,
             labels,
-        });
+        }));
     });
 }
 function getIssueNumber(pullNumber) {

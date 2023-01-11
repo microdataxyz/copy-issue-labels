@@ -74,7 +74,7 @@ async function run() {
     }, [])
   )
 
-  await client.issues.addLabels({
+  labels.length > 0 && await client.issues.addLabels({
     owner: github.context.repo.owner,
     repo: github.context.repo.repo,
     issue_number: issueNumber,
